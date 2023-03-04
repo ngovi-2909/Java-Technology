@@ -35,4 +35,14 @@
 	  	<servlet-class>tdtu.edu.downloadServlet</servlet-class>
   </servlet>
   
+   <servlet>
+	  	<servlet-name>uploadServlet</servlet-name>
+	  	<servlet-class>tdtu.edu.uploadServlet</servlet-class>
+  </servlet>
+  
+     <servlet>
+	  	<servlet-name>downloadFileServlet</servlet-name>
+	  	<servlet-class>tdtu.edu.downloadFileServlet</servlet-class>
+  </servlet>
+  
 </web-app>
