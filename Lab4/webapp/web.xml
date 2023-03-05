@@ -43,6 +43,15 @@
      <servlet>
 	  	<servlet-name>downloadFileServlet</servlet-name>
 	  	<servlet-class>tdtu.edu.downloadFileServlet</servlet-class>
-  </servlet>
+  	</servlet>
+		<servlet>
+	  	<servlet-name>HomeServlet</servlet-name>
+	  	<servlet-class>tdtu.edu.HomeServlet</servlet-class>	
+  	</servlet>
+  	
+	<servlet>
+		<servlet-name>RegisterServlet</servlet-name>
+		<servlet-class>tdtu.edu.RegisterServlet</servlet-class>
+	</servlet>
   
 </web-app>
