@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@
     <div class="row rounded border p-3">
         <div class="col-md-4">
             <h4 class="text-success">Thêm sản phẩm mới</h4>
-            <form class="mt-3" method="post" enctype="multipart/form-data">
+            <form class="mt-3" method="post" action = "home?option=insert">
                 <div class="form-group">
                     <label for="product-name">Tên sản phẩm</label>
                     <input class="form-control" type="text" placeholder="Nhập tên sản phẩm" id="product-name" name="name">
@@ -36,13 +37,23 @@
                 </div>
                 <div class="form-group">
                     <button class="btn btn-success mr-2">Thêm sản phẩm</button>
-                </div>
-
-                <div class="alert alert-danger">
-                    Vui lòng nhập tên sản phẩm
-                </div>
+				</div>
+ 
+               	<div class="form-group">
+					<c:if test="${not empty message}">
+		                <div class="alert alert-danger">
+		                    ${message}
+		                </div>
+	                </c:if>
+	            </div>
             </form>
+            <div>
+					<form action="home?option=list" method="post">
+						<button class="btn btn-success mr-2">Show All</button>
+					</form>
+				</div>
         </div>
+        
         <div class="col-md-8">
             <h4 class="text-success">Danh sách sản phẩm</h4>
             <p>Chọn một sản phẩm cụ thể để xem chi tiết</p>
@@ -56,24 +67,20 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><a href="#">Macbook Air M1</a></td>
-                    <td>$1,100</td>
-                    <td>
-                        <a href="#">Chỉnh sửa</a> |
-                        <a href="#">Xóa</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td><a href="#">Macbook Pro 2020</a></td>
-                    <td>$2,400</td>
-                    <td>
-                        <a href="#">Chỉnh sửa</a> |
-                        <a href="#">Xóa</a>
-                    </td>
-                </tr>
+                	<c:forEach var="product" items="${listProduct}">
+
+							<tr>
+								<th><c:out value="${product.id}" /></th>
+								<th><c:out value="${product.name}" /></th>
+								<th>$<c:out value="${product.price}" /></th>
+								<th>
+									&nbsp;&nbsp;&nbsp;&nbsp;
+									 <a href="home?option=delete&id=<c:out value='${product.id}'/>" >
+										<button type="button" class="btn btn-danger">Delete</button>
+									</a>
+								</th>
+							</tr>
+						</c:forEach>
                 </tbody>
             </table>
         </div>
