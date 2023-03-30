@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Lab5</display-name>
+  
+  <servlet>
+  	<servlet-name>Register</servlet-name>
+  	<servlet-class>tdtu.edu.servlet.registerServlet</servlet-class>
+  </servlet>
+  
+    <servlet>
+  	<servlet-name>Login</servlet-name>
+  	<servlet-class>tdtu.edu.servlet.loginServlet</servlet-class>
+  </servlet>
+  
+   <servlet>
+  	<servlet-name>Home</servlet-name>
+  	<servlet-class>tdtu.edu.servlet.homeServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>test</servlet-name>
+  	<servlet-class>tdtu.edu.servlet.test</servlet-class>
+  </servlet>
+
+  
+</web-app>
